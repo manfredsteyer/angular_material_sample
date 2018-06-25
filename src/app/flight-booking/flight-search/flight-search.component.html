@@ -1,0 +1,49 @@
+
+<mat-card>
+
+  <mat-card-title>Search for Flights</mat-card-title>
+  <mat-card-content>
+    
+    <mat-form-field>
+      <input [(ngModel)]="from" name="from" matInput placeholder="from">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input [(ngModel)]="to" name="to" matInput placeholder="to">
+    </mat-form-field>
+  
+  </mat-card-content>
+  <mat-card-actions>
+      
+    <button (click)="search()" mat-raised-button	color="primary">Search</button>
+      
+  </mat-card-actions>
+
+</mat-card>
+
+
+<div class="row" style="padding-left:15px; padding-right:15px">
+
+<div *ngFor="let f of flights" style="padding:0px" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col">
+
+  <app-flight-card 
+    [item]="f" 
+    [(selected)]="basket[f.id]"
+    ></app-flight-card>
+
+<!--
+  [selected]="basket[f.id]"
+  (selectedChange)="basket[f.id] = $event"
+-->
+
+</div>
+
+</div>
+
+
+<mat-card>
+  <mat-card-title>Basket</mat-card-title>
+  <mat-card-content>
+    <pre>{{ basket | json }}</pre>
+  </mat-card-content>
+</mat-card>

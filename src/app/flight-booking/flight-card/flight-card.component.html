@@ -1,0 +1,13 @@
+<mat-card [ngStyle]="{ 'background': (selected) ? 'lightsteelblue' : 'white' }">
+  <mat-card-title>{{item.from}} - {{item.to}}</mat-card-title>
+  <mat-card-content>
+    {{item.date | date:'dd.MM.yyyy HH:mm' }}
+  </mat-card-content>
+
+  <mat-card-actions style="text-align: right">
+    <button *ngIf="!selected" (click)="select()" mat-mini-fab><mat-icon>add</mat-icon></button>
+    <button *ngIf="selected" (click)="deselect()" mat-mini-fab><mat-icon>remove</mat-icon></button>
+    <a [routerLink]="['/flight-edit', item.id, {showDetails: false}]" mat-mini-fab><mat-icon>edit</mat-icon></a>
+  </mat-card-actions>
+
+</mat-card>

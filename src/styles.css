@@ -2,4 +2,6 @@
 
 body { margin: 0; }
 
-body { margin: 0; }
+mat-card {
+    margin: 10px;
+}
