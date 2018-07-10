@@ -9,3 +9,14 @@ This demo shows:
 - Http Access
 - Routing
 
+## Prerequisites
+
+- NodeJS in current version (e. g. current LTS version)
+- Visual Studio Code (free editor w/ TypeScript support)
+
+## Install and Run
+
+```
+npm install
+npm start
+```
